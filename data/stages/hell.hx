@@ -73,12 +73,16 @@ function chop() {
    axehouse.animation.play("idle");
 }
 function house2(){
- for (i in [clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 1;
- statir.alpha = .4;
- for (i in [axehouse,hill2, hill,gf]) i.alpha = 0.0000000001;
- defaultCamZoom = 0.6;
+   for (i in [clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 1;
+   statir.alpha = .4;
+   for (i in [axehouse,hill2, hill,gf]) i.alpha = 0.0000000001;
+   defaultCamZoom = 0.6;
 }
 function Transition(){
-FlxTween.tween(camGame, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
-FlxTween.tween(camHUD, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+  FlxTween.tween(camGame, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+  FlxTween.tween(camHUD, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+}
+function Transition(){
+  FlxTween.tween(camGame, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+  FlxTween.tween(camHUD, {alpha: 1}, 1, {ease: FlxEase.sineInOut});
 }
