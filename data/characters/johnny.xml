@@ -1,8 +1,8 @@
 <!DOCTYPE codename-engine-character>
-<character x="20" icon="diaperbeater" camx="70" y="-70" isGF="false" scale="0.6" camy="170" isPlayer="false" antialiasing="false" holdTime="6.1" sprite="bigjerry">
+<character x="-470" icon="diaperbeater" camx="70" y="100" isGF="false" scale="0.6" color="#FFCC33" isPlayer="false" holdTime="6.1" sprite="bigjerry">
+	<anim x="185" loop="false" y="20" fps="24" anim="left" name="singLEFT"/>
+	<anim x="20" loop="false" y="-90" fps="24" anim="down" name="singDOWN"/>
+	<anim x="275" loop="false" y="150" fps="24" anim="up" name="singUP"/>
+	<anim x="-20" loop="false" y="55" fps="24" anim="right" name="singRIGHT"/>
 	<anim x="0" loop="true" y="0" fps="24" anim="idle" name="idle"/>
-	<anim x="111" loop="false" y="9" fps="24" anim="left" name="singLEFT"/>
-	<anim x="10" loop="false" y="-55" fps="24" anim="down" name="singDOWN"/>
-	<anim x="160" loop="false" y="90" fps="24" anim="up" name="singUP"/>
-	<anim x="-4" loop="false" y="34" fps="24" anim="right" name="singRIGHT"/>
 </character>
