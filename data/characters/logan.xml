@@ -1,0 +1,4 @@
+<!DOCTYPE codename-engine-character> <!-- Made with WizardMantis's Character Converter -->
+<character antialiasing="false" holdTime="6.1" scale="2.5">
+	<anim name="idle" anim="logan" loop="true"/>
+</character>

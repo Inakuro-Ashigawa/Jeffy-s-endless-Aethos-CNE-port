@@ -1,0 +1,5 @@
+<!DOCTYPE codename-engine-character>
+<character x="450" icon="diaperbeater" camx="-250" y="-400" isGF="false" camy="80" color="#FFD033" isPlayer="false" antialiasing="false" holdTime="7.5" sprite="jeffy_front">
+	<anim x="0" loop="false" y="0" fps="24" anim="Jeffy_Front_Idle" name="idle"/>
+	<anim x="0" loop="false" y="58" fps="24" anim="Jeffy" name="yap"/>
+</character>

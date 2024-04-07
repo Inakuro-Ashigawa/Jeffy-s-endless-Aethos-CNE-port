@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="200" icon="dady" camx="100" y="200" isGF="false" camy="150" color="#FF3333" flipX="true" isPlayer="true" antialiasing="false" gameOverChar="die" holdTime="7.5" sprite="marvin_sketch">
+	<anim x="0" loop="true" y="0" fps="24" anim="Marvin_Idle" name="idle"/>
+	<anim x="95" loop="false" y="-40" fps="24" anim="Marvin_Left" name="singLEFT"/>
+	<anim x="90" loop="false" y="-130" fps="24" anim="Marvin_Down" name="singDOWN"/>
+	<anim x="-110" loop="false" y="200" fps="24" anim="Marvin_Up" name="singUP"/>
+	<anim x="5" loop="false" y="-35" fps="24" anim="Marvin_Right" name="singRIGHT"/>
+</character>

@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="-550" icon="dady" camx="-350" y="300" isGF="false" camy="250" color="#FF3333" flipX="true" isPlayer="true" antialiasing="false" gameOverChar="die" holdTime="7.5" sprite="martin_front">
+	<anim x="0" loop="false" y="0" fps="20" anim="Martin_Front_Idle" name="idle"/>
+	<anim x="133" loop="false" y="-20" fps="24" anim="Martin_Front_Left" name="singLEFT"/>
+	<anim x="35" loop="false" y="-140" fps="24" anim="Martin_Front_Down" name="singDOWN"/>
+	<anim x="20" loop="false" y="70" fps="24" anim="Martin_Front_Up" name="singUP"/>
+	<anim x="-30" loop="false" y="40" fps="24" anim="Martin_Front_Right" name="singRIGHT"/>
+	<anim x="133" loop="false" y="-20" fps="24" anim="Martin_Front_Left" name="singLEFT-alt"/>
+	<anim x="35" loop="false" y="-140" fps="24" anim="Martin_Front_Down" name="singDOWN-alt"/>
+	<anim x="20" loop="false" y="70" fps="24" anim="Martin_Front_Up" name="singUP-alt"/>
+	<anim x="-30" loop="false" y="40" fps="24" anim="Martin_Front_Right" name="singRIGHT-alt"/>
+</character>

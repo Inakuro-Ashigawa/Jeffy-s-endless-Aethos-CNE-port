@@ -1,0 +1,4 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="marvin" camx="-400" y="0" isGF="false" scale="3" camy="-190" isPlayer="false" antialiasing="false" holdTime="6.1" sprite="die">
+	<anim x="0" loop="true" y="0" fps="24" anim="die" name="idle"/>
+</character>

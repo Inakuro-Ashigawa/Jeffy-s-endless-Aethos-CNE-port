@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="-160" icon="dady" y="-90" isGF="false" scale="0.6" camy="180" color="#FF3333" flipX="true" isPlayer="true" holdTime="6.1" sprite="marmvips">
+	<anim x="2" loop="false" y="0" fps="24" anim="idle" name="idle"/>
+	<anim x="10" loop="false" y="-5" fps="24" anim="left" name="singLEFT"/>
+	<anim x="19" loop="false" y="-14" fps="24" anim="right" name="singRIGHT"/>
+	<anim x="57" loop="false" y="-115" fps="24" anim="down" name="singDOWN"/>
+	<anim x="-3" loop="false" y="28" fps="24" anim="up" name="singUP"/>
+</character>

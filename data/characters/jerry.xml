@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="10" icon="jeffy" camx="-20" y="210" isGF="false" scale="0.7" camy="30" color="#E6AA2C" isPlayer="false" holdTime="7.5" sprite="jerry">
+	<anim x="50" loop="false" y="124" fps="24" anim="left" name="singLEFT"/>
+	<anim x="-5" loop="false" y="93" fps="24" anim="down" name="singDOWN"/>
+	<anim x="-29" loop="false" y="272" fps="24" anim="up" name="singUP"/>
+	<anim x="-25" loop="false" y="83" fps="24" anim="right" name="singRIGHT"/>
+	<anim x="-11" loop="false" y="148" fps="24" anim="idle" name="idle"/>
+	<anim x="-13" loop="false" y="150" fps="6" anim="talk" name="singLEFT-alt"/>
+	<anim x="-13" loop="false" y="150" fps="6" anim="talk" name="singUP-alt"/>
+	<anim x="-13" loop="false" y="150" fps="6" anim="talk" name="singDOWN-alt"/>
+	<anim x="-13" loop="false" y="150" fps="6" anim="talk" name="singRIGHT-alt"/>
+</character>

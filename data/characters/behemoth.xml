@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="diaperbeater" camx="450" y="-250" isGF="false" camy="200" color="#FFD033" isPlayer="false" antialiasing="false" holdTime="7.5" sprite="jerry_sketch">
+	<anim x="0" loop="true" y="0" fps="24" anim="Jeffy_Idle" name="idle"/>
+	<anim x="90" loop="false" y="-20" fps="24" anim="Jeffy_Left" name="singLEFT"/>
+	<anim x="-30" loop="false" y="110" fps="24" anim="Jeffy_Right" name="singRIGHT"/>
+	<anim x="0" loop="false" y="-120" fps="24" anim="Jeffy_Down" name="singDOWN"/>
+	<anim x="30" loop="false" y="70" fps="24" anim="Jeffy_Up" name="singUP"/>
+</character>
