@@ -79,10 +79,16 @@ function house2(){
    defaultCamZoom = 0.6;
 }
 function Transition(){
-  FlxTween.tween(camGame, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
-  FlxTween.tween(camHUD, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+  //FlxTween.tween(camGame, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+  //FlxTween.tween(camHUD, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+new FlxTimer().start(1, function(tmr:FlxTimer)
+{   
+for (i in [staticd,statir,clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 0.00000000001;
+});
 }
-function Transition(){
-  FlxTween.tween(camGame, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+function Transition2(){
   FlxTween.tween(camHUD, {alpha: 1}, 1, {ease: FlxEase.sineInOut});
+}
+function back(){
+camGame.alpha = 1;
 }
