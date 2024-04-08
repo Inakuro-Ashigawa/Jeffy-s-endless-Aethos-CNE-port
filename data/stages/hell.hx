@@ -1,7 +1,18 @@
+import hxvlc.openfl.Video;
+import hxvlc.flixel.FlxVideo;
+import flixel.util.FlxTimer;
+var cutscene = null;
+
 var path = "stages/underworld/";
 var path2 = "stages/underworld/phs2/";
 
 function create() {
+
+        cutscene = new FlxVideo();
+        cutscene.onEndReached.add(cutscene.dispose);
+	cutscene.load(Assets.getPath(Paths.file("videos/jeffscene.mp4")));
+	trace(Assets.getPath(Paths.file("videos/jeffscene.mp4")));
+
     defaultCamZoom = 0.7;
     FlxG.camera.followLerp = 0.04;
     dad.x = -400;
@@ -69,26 +80,34 @@ function create() {
 
 }
 
+//i swear to god inakuro!!!!! try pressing the tab key once in a while!!!!
+//ill do it for you *this* time, but next time....! - Bromaster :3
 function chop() {	
-   axehouse.animation.play("idle");
+	axehouse.animation.play("idle");
 }
 function house2(){
-   for (i in [clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 1;
-   statir.alpha = .4;
-   for (i in [axehouse,hill2, hill,gf]) i.alpha = 0.0000000001;
-   defaultCamZoom = 0.6;
+	for (i in [clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 1;
+	statir.alpha = .4;
+	for (i in [axehouse,hill2, hill,gf]) i.alpha = 0.0000000001;
+	defaultCamZoom = 0.6;
 }
 function Transition(){
-  //FlxTween.tween(camGame, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
-  //FlxTween.tween(camHUD, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
-new FlxTimer().start(1, function(tmr:FlxTimer)
-{   
-for (i in [staticd,statir,clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 0.00000000001;
-});
+	FlxTween.tween(camGame, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+	FlxTween.tween(camHUD, {alpha: 0.000000001}, 1, {ease: FlxEase.sineInOut});
+	new FlxTimer().start(1, function(tmr:FlxTimer)
+		{   
+			for (i in [staticd,statir,clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 0.00000000001;
+		});
 }
 function Transition2(){
-  FlxTween.tween(camHUD, {alpha: 1}, 1, {ease: FlxEase.sineInOut});
+	FlxTween.tween(camHUD, {alpha: 1}, 1, {ease: FlxEase.sineInOut});
 }
 function back(){
-camGame.alpha = 1;
+	camGame.alpha = 1;
+}
+//this one is mine!!!! - bromaster
+// :3
+function cutsc() {
+	cutscene.play(); // :3
+	trace("cutscene!!!");
 }
