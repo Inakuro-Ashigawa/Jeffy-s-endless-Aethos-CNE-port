@@ -16,7 +16,8 @@ function create() {
     defaultCamZoom = 0.7;
     FlxG.camera.followLerp = 0.04;
     dad.x = -400;
-    gf.y = 400;
+    gf.x = 500;
+    gf.y = 450;
     gf.scrollFactor.set(1,1);
     boyfriend.x = 700;
     boyfriend.y = 150;
@@ -29,20 +30,26 @@ function create() {
     staticd.animation.play("idle");
     insert(0, staticd);
 
-    hill = new FlxSprite().loadGraphic(Paths.image(path+"hill1"));
+    hill = new FlxSprite(400).loadGraphic(Paths.image(path+"hill1"));
     hill.scale.set(2.5,2.5);
-    hill.scrollFactor.set(0.7,0.7);
+    hill.scrollFactor.set(1/2,1);
     insert(1, hill);
 
-    hill2 = new FlxSprite(-20, 100).loadGraphic(Paths.image(path+"hill2"));
+    hill2 = new FlxSprite(-25, 100).loadGraphic(Paths.image(path+"hill2"));
     hill2.scale.set(2.5,2.5);
+    hill2.scrollFactor.set(2/2,1);
     insert(2, hill2);
 
-    axehouse = new FlxSprite(-700, -75);
+    axehouse = new FlxSprite(-700, -65);
     axehouse.frames = Paths.getFrames(path+"axehouse");
     axehouse.animation.addByPrefix("idle", "chop", 24,false);
     axehouse.scale.set(2.5,2.5);
     insert(3, axehouse);
+
+    evil = new FlxSprite(1000, 75).loadGraphic(Paths.image(path+"evilghost"));
+    evil.scrollFactor.set(0.5, 1);
+    evil.scale.set(0.5,0.5);
+    insert(4, evil);
 
     statir = new FlxSprite(-1000, -300).loadGraphic(Paths.image(path2+"statir"));
     statir.scrollFactor.set(1,1);
@@ -80,6 +87,10 @@ function create() {
 
 }
 
+function update() {	
+        evil.alpha = Math.sin(curBeat / 4);
+}
+
 //i swear to god inakuro!!!!! try pressing the tab key once in a while!!!!
 //ill do it for you *this* time, but next time....! - Bromaster :3
 function chop() {	
@@ -89,6 +100,7 @@ function house2(){
 	for (i in [clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 1;
 	statir.alpha = .4;
 	for (i in [axehouse,hill2, hill,gf]) i.alpha = 0.0000000001;
+        evil.destroy();
 	defaultCamZoom = 0.6;
 }
 function Transition(){
