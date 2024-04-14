@@ -1,16 +1,1 @@
-{
-	"beatsPerMeasure": 4,
-	"opponentModeAllowed": false,
-	"coopAllowed": false,
-	"stepsPerBeat": 4,
-	"bpm": 175,
-	"difficulties": [
-		"NORMAL"
-	],
-	"needsVoices": true,
-	"parsedColor": -16175411,
-	"displayName": "Aethos",
-	"icon": "jeffy",
-	"name": "aethos",
-	"color": "#092ECD"
-}
+{"opponentModeAllowed":false,"icon":"jeffy","difficulties":["NORMAL"],"parsedColor":-16175411,"color":"#092ECD","name":"aethos","coopAllowed":false,"stepsPerBeat":4,"displayName":"Aethos","beatsPerMeasure":4,"needsVoices":true,"bpm":175}
