@@ -1,6 +1,7 @@
 import hxvlc.openfl.Video;
 import hxvlc.flixel.FlxVideo;
 import flixel.util.FlxTimer;
+import flixel.FlxG;
 var cutscene = null;
 
 var hudTween:FlxTween;
@@ -8,6 +9,12 @@ var gameTween:FlxTween;
 
 var path = "stages/underworld/";
 var path2 = "stages/underworld/phs2/";
+
+var jeffSpot:Int = 255;
+var marvSpot:Int = 285;
+var curSpot:Int = 265;
+
+var head:FlxSprite;
 
 function create() {
 
@@ -52,38 +59,52 @@ function create() {
     evil.scrollFactor.set(0.5, 1);
     evil.scale.set(0.5,0.5);
     insert(4, evil);
+
+    theHead = new FlxTypedGroup();
+    insert(5, theHead);
+
+    eyes = new FlxSprite(curSpot, -555).loadGraphic(Paths.image(path+"eyebal"));
+    eyes.scrollFactor.set(1, 1);
+    eyes.scale.set(0.7,0.7);
+    theHead.add(eyes);
+
+    head = new FlxSprite(200, -600).loadGraphic(Paths.image(path+"loganhedz"), true, 337,438);
+    head.animation.add(head, [0,1,2,3,4], 0);
+    //head.scrollFactor.set(1, 1);
+    head.scale.set(0.7,0.7);
+    theHead.add(head);
     
     statir = new FlxSprite(-1000, -300).loadGraphic(Paths.image(path2+"statir"));
     statir.scrollFactor.set(1,1);
-    insert(4, statir);
+    insert(6, statir);
 
     clouds = new FlxSprite(-1000, -200).loadGraphic(Paths.image(path2+"clouds"));
     clouds.scrollFactor.set(1,1);
-    insert(5, clouds);
+    insert(7, clouds);
 
     backhil = new FlxSprite(-900,-200).loadGraphic(Paths.image(path2+"backhil"));
     backhil.scrollFactor.set(1,1);
-    insert(6, backhil);
+    insert(8, backhil);
 
     bulk = new FlxSprite(-900,-200).loadGraphic(Paths.image(path2+"bulk"));
     bulk.scrollFactor.set(1,1);
-    insert(7, bulk);
+    insert(9, bulk);
 
     glow = new FlxSprite(-900,-200).loadGraphic(Paths.image(path2+"glow"));
     glow.scrollFactor.set(1,1);
-    insert(8, glow);
+    insert(10, glow);
 
     chop = new FlxSprite(-900,-200).loadGraphic(Paths.image(path2+"chop"));
     chop.scrollFactor.set(1,1);
-    insert(9, chop);
+    insert(11, chop);
 
     glow2 = new FlxSprite(-900,-200).loadGraphic(Paths.image(path2+"glow2"));
     glow2.scrollFactor.set(1,1);
-    insert(10, glow2);
+    insert(12, glow2);
 
     hills = new FlxSprite(-900,-200).loadGraphic(Paths.image(path2+"hills"));
     hills.scrollFactor.set(1,1);
-    insert(11, hills);
+    insert(13, hills);
 
     var index = members.indexOf(strumLines.members[2].characters[0]);
     black = new FlxSprite(-500, -500);
@@ -92,10 +113,25 @@ function create() {
     insert(100000000, black); // dont fucking ask - tedyes
 
    for (i in [statir,clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 0.00000000001;
+   theHead.x += 100;
+}
+var fullTime:Float = 0;
+function update(elapsed) {	
+        fullTime += elapsed;
+        evil.alpha = Math.sin(curBeat / 4);
+        eyes.x = curSpot;
+        eyes.y = head.y + 155;
+        if (canFloat) head.y = 0 - (20 * FlxMath.fastSin(fullTime*1.8));
+        if (curCameraTarget == 0) curSpot = Math.floor(lerp(curSpot, jeffSpot, 0.2));
+        if (curCameraTarget == 1) curSpot = Math.floor(lerp(curSpot, marvSpot, 0.2));
+}
+function beatHit(curBeat) {	
+        if(curBeat % 2 == 0) head.animation.randomFrame();
 }
 
-function update() {	
-        evil.alpha = Math.sin(curBeat / 4);
+function loganhead(){
+        FlxTween.tween(theHead.members[1], {y: 0}, 0.7, {ease: FlxEase.circOut, onComplete: function(twn:FlxTween) {canFloat = true;}});
+        for (i in 0...theHead.members.length) FlxTween.tween(theHead.members[i].scale, {x: 1, y: 1}, 0.7, {ease: FlxEase.circOut});       
 }
 
 function ss(){
@@ -125,6 +161,7 @@ function house2(){
 	statir.alpha = .4;
 	for (i in [axehouse,hill2, hill,gf]) i.alpha = 0.0000000001;
         evil.destroy();
+        theHead.destroy();
 	defaultCamZoom = 0.6;
 }
 function Transition(){
@@ -136,7 +173,7 @@ function Transition2(){
 	FlxTween.tween(camHUD, {alpha: 1}, 1, {ease: FlxEase.sineInOut});
 }
 function starting(){
-        camGame.followLerp = 1;
+        camGame.followLerp = 0.04;
 	FlxTween.tween(black, {alpha: 0}, 5, {ease: FlxEase.sineInOut});
 }
 function lockin(){
