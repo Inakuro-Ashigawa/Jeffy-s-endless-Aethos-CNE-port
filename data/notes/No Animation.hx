@@ -1,0 +1,1 @@
+function onNoteHit(event) if (event.noteType == "No Animation") event.animCancelled = true;
