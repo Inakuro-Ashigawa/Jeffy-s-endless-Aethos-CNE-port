@@ -1,1 +1,1 @@
-function onNoteHit(event) if (event.noteType == "No Animation") function onNoteHit(event) if (event.noteType == "No Anim Note") event.animCancelled = true;
+function onNoteHit(event) if (event.noteType == "No Animation") event.animCancelled = true;
