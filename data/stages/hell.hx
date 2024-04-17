@@ -125,8 +125,10 @@ function update(elapsed) {
         if (curCameraTarget == 0) curSpot = Math.floor(lerp(curSpot, jeffSpot, 0.2));
         if (curCameraTarget == 1) curSpot = Math.floor(lerp(curSpot, marvSpot, 0.2));
 }
+
+var headExists:Bool = true;
 function beatHit(curBeat) {	
-        if(curBeat % 2 == 0) head.animation.randomFrame();
+        if(curBeat % 2 == 0 && headExists) head.animation.randomFrame();
 }
 
 function loganhead(){
@@ -162,6 +164,7 @@ function house2(){
 	for (i in [axehouse,hill2, hill,gf]) i.alpha = 0.0000000001;
         evil.destroy();
         theHead.destroy();
+        headExists = false;
 	defaultCamZoom = 0.6;
 }
 function Transition(){
