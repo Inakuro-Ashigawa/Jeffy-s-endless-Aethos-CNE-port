@@ -113,9 +113,9 @@ function create() {
     insert(100000000, black); // dont fucking ask - tedyes
 
    for (i in [statir,clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 0.00000000001;
-   theHead.x += 100;
 }
 var fullTime:Float = 0;
+var canFloat:Bool = false;
 function update(elapsed) {	
         fullTime += elapsed;
         evil.alpha = Math.sin(curBeat / 4);
