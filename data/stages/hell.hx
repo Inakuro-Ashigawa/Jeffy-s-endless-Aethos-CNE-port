@@ -114,6 +114,7 @@ function create() {
 
    for (i in [statir,clouds,backhil, bulk, glow, chop, glow2, hills]) i.alpha = 0.00000000001;
 }
+
 var fullTime:Float = 0;
 var canFloat:Bool = false;
 function update(elapsed) {	
@@ -195,5 +196,7 @@ function cutsc() {
 }
 
 function finale() {
-
+        camGame.flash(0xFFFF0000,1);
+        playerStrums.cameras = [camGame];
+        for (i in 0...playerStrums.members.length) playerStrums.members[i].scrollFactor.set(1,1);
 }
